@@ -1,0 +1,29 @@
+<%- include("partials/header") %>
+<div class="container py-4">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Article <%= article.id %></li>
+        </ol>
+    </nav>
+
+    <h3>Edit Article ID: <%= article.id %></h3>
+    <form id="editForm" action="/<%= article.id %>" method="POST">
+        <div class="mb-3">
+            <label for="article_title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="article_title" name="article_title"
+                value="<%= article.article_title %>">
+        </div>
+        <div class="mb-3">
+            <label for="article_content" class="form-label">Content</label>
+            <input type="textarea" class="form-control" id="article_content" name="article_content" rows="3"
+                value="<%= article.article_content %>"></input>
+        </div>
+        <div class="mb-3">
+            <input type="textarea" class="form-control" id="article_content" name="id" rows="3"
+                value="<%= article.id %>" hidden></input>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </form>
+</div>
+<%- include("partials/footer") %>

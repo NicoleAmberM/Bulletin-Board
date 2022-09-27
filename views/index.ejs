@@ -1,0 +1,14 @@
+<%- include("partials/header") %>
+<div class="container py-4">
+    <h2>Bulletin Board</h2>
+
+    <div class="d-flex justify-content-end mb-3">
+        <%- include("components/modal") %>
+    </div>
+
+    <% articles.forEach( article => { %>
+    <%- include("components/card", { article }) %>
+    <% }) %>
+</div>
+
+<%- include("partials/footer") %>
